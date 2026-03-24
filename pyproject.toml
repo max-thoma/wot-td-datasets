@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "wot_td_datasets"
+version = "0.1.0"
+description = "Generating WoT TD from MQTT message logs"
+authors = ["Max Thoma"]
+readme = "README.md"
+license = "BSD-3-Clause"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<4.0"
+pydantic = "^2.8.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
