@@ -1,11 +1,11 @@
 import os
 
-from wot_td_datasets.generate import things_list
+from wot_td_datasets.generate import _things_list
 from wot_td_datasets.message_log import (
-    MessageLog,
     DeviceMessageLog,
-    MessageLogList,
     DeviceMessageLogList,
+    MessageLog,
+    MessageLogList,
 )
 from wot_td_datasets.td import ThingDescription
 
@@ -146,7 +146,7 @@ def mock_thing_str(td: ThingDescription):
 
 def generate_message_logs() -> DeviceMessageLogList:
     message_log_lst = []
-    for thing in things_list:
+    for thing in _things_list:
         device_message_logs = mock_thing(thing.td())
         message_log_lst.append(
             DeviceMessageLog(device=thing.td().title, logs=device_message_logs)

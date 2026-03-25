@@ -1,4 +1,5 @@
 import os
+from enum import IntFlag
 
 from wot_td_datasets.things.custom import (
     allarm_control_panel,
@@ -83,8 +84,7 @@ from wot_td_datasets.things.web_things import (
     wt_video_camera,
 )
 
-things_list = [
-    ## Custom
+things_list_custom = [
     allarm_control_panel,
     binary_window_contact,
     button,
@@ -108,7 +108,9 @@ things_list = [
     tracker,
     vacuum,
     window_cover,
-    ## WebThings
+]
+
+things_list_web_things = [
     wt_air_quality_sensor,
     wt_alarm,
     wt_barometric_pressure_sensor,
@@ -135,7 +137,9 @@ things_list = [
     wt_temperature_sensor,
     wt_thermostat,
     wt_video_camera,
-    ## Kinder
+]
+
+things_list_kinder = [
     AirConditioner,
     Alarm,
     AmbientLightstrip,
@@ -166,13 +170,31 @@ things_list = [
 ]
 
 
-def thing_list():
-    return things_list
+class DataSets(IntFlag):
+    CUSTOM = 1
+    WEB_THINGS = 2
+    KINDER = 4
+
+
+_things_list = things_list_custom + things_list_web_things + things_list_kinder
+
+_things_dict = {
+    DataSets.CUSTOM: things_list_custom,
+    DataSets.WEB_THINGS: things_list_web_things,
+    DataSets.KINDER: things_list_kinder,
+}
+
+
+def td_datasets(selection: DataSets):
+    ds = []
+    for dataset in selection:
+        ds.extend(_things_dict[dataset])
+    return ds
 
 
 def generate_tds():
     count = 0
-    for thing in things_list:
+    for thing in _things_list:
         td = thing.td()
 
         if not os.path.exists("tds"):
@@ -187,7 +209,7 @@ def generate_tds():
                 )
                 td_file.write(td_content)
         count += 1
-    print(f"Generated {len(things_list)} TDs")
+    print(f"Generated {len(_things_list)} TDs")
 
 
 if __name__ == "__main__":
