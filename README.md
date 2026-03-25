@@ -5,22 +5,24 @@ The TDs are example of MQTT IoT devices that may be found in a Local Energy Comm
 
 # Basic Usage
 
-It is recommended to us [poetry](https://python-poetry.org) and the `pyproject.toml` file to install the dependencies of this project.
+It is recommended to use [poetry](https://python-poetry.org) and the `pyproject.toml` file to install the dependencies of this project.
 
 ```bash
+git clone https://github.com/max-thoma/wot-td-datasets.git
+cd wot-td-datasets
 poetry install
 ```
 
 To generate the TDs run:
 
 ```bash
-poetry run python src/td_generator/generate.py
+poetry run python src/wot_td_datasets/generate.py
 ```
 
 To generate the mock message logs run:
 
 ```bash
-poetry run python src/td_generator/mock.py
+poetry run python src/wot_td_datasets/mock.py
 ```
 
 # Datasets
