@@ -1,7 +1,6 @@
 import random
 
-from wot_td_datasets.td import ThingDescription
-from wot_td_datasets.td import MESSAGE_NUM
+from wot_td_datasets.td import MESSAGE_NUM, ThingDescription
 
 
 def _mock(type=None, min=None, max=None, enum=None, name=None):
@@ -37,7 +36,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "roof/pv_panel/max_pressure_load",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -53,7 +52,7 @@ def td():
                     "minimum": 0,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "roof/pv_panel/nominal_power",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -68,7 +67,7 @@ def td():
                     "minimum": 0,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "roof/pv_panel/max_system_voltage",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],

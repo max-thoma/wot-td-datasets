@@ -1,7 +1,6 @@
 import random
 
-from wot_td_datasets.td import ThingDescription
-from wot_td_datasets.td import MESSAGE_NUM
+from wot_td_datasets.td import MESSAGE_NUM, ThingDescription
 
 
 def _mock_location(type=None, min=None, max=None, enum=None, name=None):
@@ -49,7 +48,7 @@ def td():
                     "type": "object",
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "homeassistant/device_tracker/a4567d663eaf/pos",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -70,7 +69,7 @@ def td():
                     "data": {"type": "null"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "homeassistant/device_tracker/a4567d663eaf/alarm",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -94,7 +93,7 @@ def td():
                     "output": {"observable": False, "type": "null"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "homeassistant/device_tracker/a4567d663eaf/config",
                             "mqv:retain": False,
                             "op": ["invokeaction"],

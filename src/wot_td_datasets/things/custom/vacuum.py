@@ -24,7 +24,7 @@ def td():
                     ],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "apartment/vacuum/state",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -40,7 +40,7 @@ def td():
                     "maximum": 100,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "apartment/vacuum/bat",
                             "mqv:retain": True,
                             "op": ["observeproperty"],
@@ -56,7 +56,7 @@ def td():
                 "enum": ["empty", "medium", "full"],
                 "forms": [
                     {
-                        "href": "192.168.0.100:1883",
+                        "href": "mqtt://192.168.0.100:1883",
                         "mqv:topic": "apartment/vacuum/bin/state",
                         "mqv:retain": True,
                         "op": ["observeproperty"],
@@ -70,7 +70,7 @@ def td():
                     "data": {"type": "null"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "apartment/vacuum/stuck",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -83,7 +83,7 @@ def td():
                     "data": {"type": "null"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "apartment/vacuum/bin/full",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -110,7 +110,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "apartment/vacuum/cmnd",
                             "mqv:retain": False,
                             "op": ["invokeaction"],
@@ -127,7 +127,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "apartment/vacuum/pause",
                             "mqv:retain": False,
                             "op": ["invokeaction"],

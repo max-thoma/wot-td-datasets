@@ -2,7 +2,7 @@ import random
 import sys
 from enum import Enum
 from random import sample
-from typing import Optional, List, Any, Callable, Dict
+from typing import Any, Callable, Dict, List, Optional
 
 from pydantic import (
     BaseModel,
@@ -72,7 +72,7 @@ def default_mock(type=AttributeType.null, min=None, max=None, enum=None, name=No
 
 
 class Forms(BaseModel):
-    href: str = "broker.emqx.io:1883"
+    href: str = "mqtt://broker.emqx.io:1883"
     contentType: Optional[str] = None
     topic: str = Field(
         alias="mqv:topic", description="The MQTT topic of the affordance"

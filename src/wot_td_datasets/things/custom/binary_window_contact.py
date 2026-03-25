@@ -20,7 +20,7 @@ def td():
                     "enum": ["open", "closed", "unknown"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "home-assistant/window/contact",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -35,7 +35,7 @@ def td():
                     "enum": ["unavailable", "available"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "home-assistant/window/availability",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],

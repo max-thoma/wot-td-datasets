@@ -29,7 +29,7 @@ def td():
                     "enum": ["unknown", "normal", "fault"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "application/deviceid/sensor/operation",
                             "mqv:retain": False,
                             "op": ["observeproperty"],
@@ -43,7 +43,7 @@ def td():
                     "type": "string",
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "application/deviceid/sensor/uptime",
                             "mqv:retain": True,
                             "op": ["observeproperty"],
@@ -59,7 +59,7 @@ def td():
                     "data": {"type": "integer"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "response": {"contentType": "text/plain"},
                             "mqv:topic": "application/deviceid/sensor/illuminance",
@@ -78,7 +78,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "response": {"contentType": "text/plain"},
                             "mqv:topic": "application/deviceid/sensor/calibration_status",
@@ -95,7 +95,7 @@ def td():
                     "input": {"observable": True, "type": "integer"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "response": {"contentType": "text/plain"},
                             "mqv:topic": "application/deviceid/sensor/calibrate",

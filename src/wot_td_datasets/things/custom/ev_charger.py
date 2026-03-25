@@ -1,7 +1,6 @@
 import random
 
-from wot_td_datasets.td import ThingDescription
-from wot_td_datasets.td import MESSAGE_NUM
+from wot_td_datasets.td import MESSAGE_NUM, ThingDescription
 
 
 def _mock(type=None, min=None, max=None, enum=None, name=None):
@@ -33,7 +32,7 @@ def td():
                     "enum": ["A", "B", "C", "D", "E", "F"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/charger/status",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -52,7 +51,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/charger/current",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -69,7 +68,7 @@ def td():
                     "maximum": 3600,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/charger/power",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -84,7 +83,7 @@ def td():
                     "data": {"type": "boolean"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/charger/enabled",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -99,7 +98,7 @@ def td():
                     "input": {"observable": True, "type": "boolean"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/charger/enable",
                             "mqv:retain": False,
                             "op": ["invokeaction"],
@@ -114,7 +113,7 @@ def td():
                     "input": {"observable": True, "type": "integer"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/charger/maxCurrent",
                             "mqv:retain": False,
                             "op": ["invokeaction"],

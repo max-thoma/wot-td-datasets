@@ -17,7 +17,7 @@ def td():
                     "enum": ["UNDOCKED", "DOCKED", "CHARGING", "MOWING"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "lawn_mower_plus/state",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -33,7 +33,7 @@ def td():
                     "maximum": 100,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "lawn_mower_plus/soc",
                             "mqv:retain": True,
                             "op": ["observeproperty"],
@@ -49,7 +49,7 @@ def td():
                     "maximum": 250,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "lawn_mower_plus/reach",
                             "mqv:retain": True,
                             "op": ["observeproperty"],
@@ -64,7 +64,7 @@ def td():
                     "data": {"type": "string", "enum": ["DOCKED", "UNDOCKED"]},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "lawn_mower_plus/dock/status",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -83,7 +83,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "lawn_mower_plus/start",
                             "mqv:retain": False,
                             "op": ["invokeaction"],
@@ -100,7 +100,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "lawn_mower_plus/pause",
                             "mqv:retain": False,
                             "op": ["invokeaction"],
@@ -117,7 +117,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "lawn_mower_plus/dock",
                             "mqv:retain": False,
                             "op": ["invokeaction"],

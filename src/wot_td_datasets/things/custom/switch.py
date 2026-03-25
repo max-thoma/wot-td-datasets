@@ -18,7 +18,7 @@ def td():
                     "type": "boolean",
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "home/downstairs/kitchen/switch004",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],

@@ -19,7 +19,7 @@ def td():
                     "enum": ["unknown", "locked", "unlocked", "jammed"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "backdoor/lock/state",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -35,7 +35,7 @@ def td():
                     "maximum": 9999,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "backdoor/lock/remaining_time",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -50,7 +50,7 @@ def td():
                     "data": {"observable": False, "type": "null"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "backdoor/lock/manualoverwrite",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -69,7 +69,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "backdoor/lock/lock",
                             "mqv:retain": False,
                             "op": ["invokeaction"],
@@ -87,7 +87,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "backdoor/lock/unlock",
                             "mqv:retain": False,
                             "op": ["invokeaction"],

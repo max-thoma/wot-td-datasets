@@ -1,5 +1,6 @@
-from wot_td_datasets.td import ThingDescription, MESSAGE_NUM
 import random
+
+from wot_td_datasets.td import MESSAGE_NUM, ThingDescription
 
 
 def _mock(type=None, min=None, max=None, enum=None, name=None):
@@ -31,7 +32,7 @@ def td():
                     "enum": ["OK", "ERROR"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "smart_meter/status",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -50,7 +51,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "smart_meter/current",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -67,7 +68,7 @@ def td():
                     "maximum": 9000,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "smart_meter/power",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -81,7 +82,7 @@ def td():
                     "type": "number",
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "smart_meter/power/total",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -95,7 +96,7 @@ def td():
                     "type": "number",
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "smart_meter/power/today",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -109,7 +110,7 @@ def td():
                     "type": "number",
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "smart_meter/power/15min",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],

@@ -17,7 +17,7 @@ def td():
                     "enum": ["UNKNOWN", "COOL", "OFF", "STANDBY", "FAN_ONLY"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "upstairs/office/ac/status",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -32,7 +32,7 @@ def td():
                     "enum": ["ON", "OFF"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "upstairs/office/ac/swing",
                             "mqv:retain": False,
                             "op": ["observeproperty"],
@@ -47,7 +47,7 @@ def td():
                     "enum": ["OFF", "LOW", "MEDIUM", "HIGH"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "upstairs/office/ac/fan",
                             "mqv:retain": False,
                             "op": ["observeproperty"],
@@ -63,7 +63,7 @@ def td():
                     "maximum": 68,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "upstairs/office/ac/temp",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -78,7 +78,7 @@ def td():
                     "data": {"type": "null"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "upstairs/office/ac/setpoint/ok",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -99,7 +99,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "upstairs/office/ac/setpoint/set",
                             "mqv:retain": False,
                             "op": ["invokeaction"],
@@ -117,7 +117,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "mqv:topic": "upstairs/office/ac/mode/set",
                             "mqv:retain": False,
@@ -136,7 +136,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "mqv:topic": "upstairs/office/ac/fan/set",
                             "mqv:retain": False,

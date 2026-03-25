@@ -1,6 +1,6 @@
 import random
 
-from wot_td_datasets.td import ThingDescription, MESSAGE_NUM
+from wot_td_datasets.td import MESSAGE_NUM, ThingDescription
 
 
 def _mock(type=None, min=None, max=None, enum=None, name=None):
@@ -31,7 +31,7 @@ def td():
                     "enum": ["On", "Off", "Failed"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "application/bulb/status",
                             "mqv:retain": True,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -69,7 +69,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "mqv:topic": "application/bulb/set",
                             "mqv:retain": False,
@@ -88,7 +88,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "application/bulb/power",
                             "mqv:retain": False,
                             "op": ["invokeaction"],

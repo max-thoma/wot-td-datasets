@@ -17,7 +17,7 @@ def td():
                     "enum": ["A", "B", "C", "D", "E", "F"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/charge/status",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -33,7 +33,7 @@ def td():
                     "maximum": 100,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/soc",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -47,7 +47,7 @@ def td():
                     "type": "number",
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/charged",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -63,7 +63,7 @@ def td():
                     "maximum": 75,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/capacity",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -77,7 +77,7 @@ def td():
                     "type": "number",
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/range",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -91,7 +91,7 @@ def td():
                     "type": "number",
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/odometer",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -107,7 +107,7 @@ def td():
                     "maximum": 3600,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/charger/power",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -122,7 +122,7 @@ def td():
                     "data": {"type": "string", "enum": ["START", "STOP"]},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/charging",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -142,7 +142,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/ev/charging/limit",
                             "mqv:retain": False,
                             "op": ["invokeaction"],

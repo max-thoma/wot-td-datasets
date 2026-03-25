@@ -28,7 +28,7 @@ def td():
                     ],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "home/alarm",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -55,7 +55,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "response": {"contentType": "text/plain"},
                             "mqv:topic": "home/alarm/set",

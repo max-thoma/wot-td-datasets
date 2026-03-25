@@ -20,7 +20,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "mqv:topic": "application/my_bulb/set",
                             "mqv:retain": False,

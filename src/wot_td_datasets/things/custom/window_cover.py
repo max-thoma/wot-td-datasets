@@ -17,7 +17,7 @@ def td():
                     "enum": ["OPEN", "CLOSED"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "home/cover/pos",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -35,7 +35,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "mqv:topic": "home/cover/chg",
                             "mqv:retain": False,
@@ -52,7 +52,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "mqv:topic": "home/cover/light",
                             "mqv:retain": True,
@@ -76,7 +76,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "home/cover/cmd",
                             "mqv:retain": False,
                             "op": ["invokeaction"],

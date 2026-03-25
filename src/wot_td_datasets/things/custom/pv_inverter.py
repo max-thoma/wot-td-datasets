@@ -1,7 +1,6 @@
 import random
 
-from wot_td_datasets.td import ThingDescription
-from wot_td_datasets.td import MESSAGE_NUM
+from wot_td_datasets.td import MESSAGE_NUM, ThingDescription
 
 
 def _mock(type=None, min=None, max=None, enum=None, name=None):
@@ -47,7 +46,7 @@ def td():
                     ],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "cellar/inverter/status",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -66,7 +65,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "cellar/inverter/current",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -82,7 +81,7 @@ def td():
                     "minimum": 0,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "cellar/inverter/active_power",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -97,7 +96,7 @@ def td():
                     "minimum": 0,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "cellar/inverter/reactive_power",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -112,7 +111,7 @@ def td():
                     "minimum": 0,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "cellar/inverter/temperature",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -127,7 +126,7 @@ def td():
                     "data": {"type": "boolean"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "cellar/inverter/current_state",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -140,7 +139,7 @@ def td():
                     "data": {"type": "null"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "cellar/inverter/error",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -159,7 +158,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "cellar/inverter/cmnd",
                             "mqv:retain": False,
                             "op": ["invokeaction"],

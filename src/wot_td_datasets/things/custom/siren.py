@@ -19,7 +19,7 @@ def td():
                     "enum": ["ONLINE", "OFFLINE"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/siren/availability",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -38,7 +38,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/siren/activate/result",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -55,7 +55,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/siren/test/result",
                             "mqv:retain": False,
                             "op": ["subscribeevent", "unsubscribeevent"],
@@ -73,7 +73,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/siren/activate",
                             "mqv:retain": False,
                             "op": ["invokeaction"],
@@ -89,7 +89,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "garage/siren/test",
                             "mqv:retain": False,
                             "op": ["invokeaction"],

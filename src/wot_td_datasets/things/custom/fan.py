@@ -17,7 +17,7 @@ def td():
                     "enum": ["UNKNOWN", "ON", "OFF"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "bedroom_fan/ceil/status",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -31,7 +31,7 @@ def td():
                     "type": "boolean",
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "bedroom_fan/ceil/oscillation",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -46,7 +46,7 @@ def td():
                     "data": {"type": "string", "enum": ["STALED", "OPERATIONAL"]},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "mqv:topic": "bedroom_fan/ceil/staling",
                             "mqv:retain": False,
@@ -67,7 +67,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "response": {"contentType": "text/plain"},
                             "mqv:topic": "bedroom_fan/ceil/set/mode",
@@ -88,7 +88,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "response": {"contentType": "text/plain"},
                             "mqv:topic": "bedroom_fan/ceil/set/speed",

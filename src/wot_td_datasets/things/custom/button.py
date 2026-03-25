@@ -19,7 +19,7 @@ def td():
                     "enum": ["unavailable", "available"],
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "mqv:topic": "home/bedroom/switch1/availability",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -34,7 +34,7 @@ def td():
                     "data": {"type": "null"},
                     "forms": [
                         {
-                            "href": "192.168.0.100:1883",
+                            "href": "mqtt://192.168.0.100:1883",
                             "contentType": "text/plain",
                             "response": {"contentType": "text/plain"},
                             "mqv:topic": "home/bedroom/switch1/pressed",
