@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "wot_td_datasets"
 version = "0.1.0"
-description = "Generating WoT TD from MQTT message logs"
+description = "Three datasets of WoT TDs using MQTT"
 authors = ["Max Thoma"]
 readme = "README.md"
 license = "BSD-3-Clause"
