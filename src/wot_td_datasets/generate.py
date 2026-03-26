@@ -1,6 +1,7 @@
 import os
 from enum import IntFlag
 
+from wot_td_datasets.td import ThingDescription
 from wot_td_datasets.things.custom import (
     allarm_control_panel,
     binary_window_contact,
@@ -185,7 +186,9 @@ _things_dict = {
 }
 
 
-def td_datasets(selection: DataSets):
+def td_datasets(
+    selection: DataSets = DataSets.CUSTOM | DataSets.WEB_THINGS | DataSets.KINDER,
+):
     ds = []
     for dataset in selection:
         ds.extend(_things_dict[dataset])

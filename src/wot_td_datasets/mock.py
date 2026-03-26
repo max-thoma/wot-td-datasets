@@ -154,7 +154,7 @@ def generate_message_logs() -> DeviceMessageLogList:
     return DeviceMessageLogList(logs=message_log_lst)
 
 
-def generate_device_message_log(thing):
+def generate_device_message_log(thing) -> DeviceMessageLog:
     return DeviceMessageLog(device=thing.td().title, logs=mock_thing(thing.td()))
 
 
