@@ -30,7 +30,7 @@ def put_to_tdd(
     Returns:
         None
     """
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger("publish_td.py")
 
     things_list = td_datasets(dataset_selection)
     for thing in things_list:
@@ -61,4 +61,6 @@ def put_to_tdd(
 
 
 if __name__ == "__main__":
+    formatter = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    logging.basicConfig(level=logging.INFO, format=formatter)
     put_to_tdd("localhost", 8082, DataSets.CUSTOM)

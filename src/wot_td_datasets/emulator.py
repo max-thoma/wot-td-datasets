@@ -6,7 +6,7 @@ from amqtt.client import ConnectError, MQTTClient
 from wot_td_datasets.generate import DataSets, td_datasets
 from wot_td_datasets.mock import generate_device_message_log
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("emulator.py")
 
 
 async def emulate_client(thing) -> None:
@@ -46,6 +46,7 @@ async def run_tasks(things):
 
 def main():
     formatter = "[%(asctime)s] :: %(levelname)s :: %(name)s :: %(message)s"
+    formatter = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     logging.basicConfig(level=logging.INFO, format=formatter)
 
     asyncio.run(run_tasks(td_datasets(DataSets.CUSTOM)))
