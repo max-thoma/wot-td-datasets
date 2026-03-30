@@ -4,11 +4,7 @@ from enum import Enum
 from random import sample
 from typing import Any, Callable, Dict, List, Optional
 
-from pydantic import (
-    BaseModel,
-    Field,
-    RootModel,
-)
+from pydantic import BaseModel, Field, RootModel, field_serializer
 from pydantic.json_schema import SkipJsonSchema
 
 MESSAGE_NUM: int = 5
@@ -95,6 +91,13 @@ class Forms(BaseModel):
 
     def __str__(self):
         return f"topic='{self.topic}' retain='{self.retain}'"
+
+    @field_serializer("href")
+    def serialize_href(self, href: str) -> str:
+        base_broker = href.rstrip("/")
+        topic_path = self.topic.lstrip("/")
+
+        return f"{base_broker}/{topic_path}"
 
 
 class BaseProperty(BaseModel):
