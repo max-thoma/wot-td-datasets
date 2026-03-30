@@ -32,7 +32,7 @@ def td():
                     "enum": ["ONLINE", "OFFLINE"],
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "mqv:topic": "home/front/db/avail",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -51,7 +51,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "contentType": "text/plain",
                             "response": {"contentType": "text/plain"},
                             "mqv:topic": "home/front/db/ring",

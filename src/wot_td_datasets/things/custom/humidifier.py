@@ -30,7 +30,7 @@ def td():
                     "enum": ["UNKNOWN", "ON", "OFF", "IDLE"],
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "mqv:topic": "living_room/humidifier/status",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -46,7 +46,7 @@ def td():
                     "maximum": 95,
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "mqv:topic": "living_room/humidifier/humidity",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -65,7 +65,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "contentType": "text/plain",
                             "mqv:topic": "living_room/humidifier/target/ok",
                             "mqv:retain": True,
@@ -84,7 +84,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "contentType": "text/plain",
                             "mqv:topic": "living_room/humidifier/threshold/below",
                             "mqv:retain": True,
@@ -107,7 +107,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "contentType": "text/plain",
                             "response": {"contentType": "text/plain"},
                             "mqv:topic": "living_room/humidifier/target/set",
@@ -128,7 +128,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "contentType": "text/plain",
                             "response": {"contentType": "text/plain"},
                             "mqv:topic": "living_room/humidifier/threshold/set",
@@ -158,7 +158,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "contentType": "text/plain",
                             "mqv:topic": "living_room/humidifier/set/mode",
                             "mqv:retain": False,
@@ -177,7 +177,7 @@ def td():
                     "output": None,
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "contentType": "text/plain",
                             "mqv:topic": "living_room/humidifier/set/state",
                             "mqv:retain": False,

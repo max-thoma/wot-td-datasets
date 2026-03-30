@@ -36,7 +36,7 @@ def td():
                     },
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "mqv:topic": "roof/pv_panel/max_pressure_load",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -52,7 +52,7 @@ def td():
                     "minimum": 0,
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "mqv:topic": "roof/pv_panel/nominal_power",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],
@@ -67,7 +67,7 @@ def td():
                     "minimum": 0,
                     "forms": [
                         {
-                            "href": "mqtt://192.168.0.100:1883",
+                            "href": "mqtt://localhost:1883",
                             "mqv:topic": "roof/pv_panel/max_system_voltage",
                             "mqv:retain": True,
                             "op": ["observeproperty", "readproperty"],

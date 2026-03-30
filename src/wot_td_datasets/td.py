@@ -13,6 +13,8 @@ from pydantic.json_schema import SkipJsonSchema
 
 MESSAGE_NUM = 5
 
+DEFAULT_MQTT_BROKER = "mqtt://localhost:1883"
+
 # logging.basicConfig(level=logging.DEBUG)
 # logger = logging.getLogger(__name__)
 
@@ -72,7 +74,7 @@ def default_mock(type=AttributeType.null, min=None, max=None, enum=None, name=No
 
 
 class Forms(BaseModel):
-    href: str = "mqtt://broker.emqx.io:1883"
+    href: str = DEFAULT_MQTT_BROKER
     contentType: Optional[str] = None
     topic: str = Field(
         alias="mqv:topic", description="The MQTT topic of the affordance"

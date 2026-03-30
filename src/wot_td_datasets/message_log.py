@@ -2,7 +2,7 @@ from typing import List
 
 from pydantic import BaseModel
 
-from wot_td_datasets.td import Forms
+from wot_td_datasets.td import DEFAULT_MQTT_BROKER, Forms
 
 
 class MessageLog(BaseModel):
@@ -18,7 +18,7 @@ class MessageLog(BaseModel):
             pl = f"{self.payload}"
         return f"topic: {self.topic}; payload: {pl}; retain: {str(self.retain).lower()}"
 
-    def to_td_form(self, broker_str="mqtt://broker.emqx.io:1883"):
+    def to_td_form(self, broker_str=DEFAULT_MQTT_BROKER):
         d = {"href": broker_str, "mqv:topic": self.topic, "mqv:retain": self.retain}
         return Forms(**d)
 
