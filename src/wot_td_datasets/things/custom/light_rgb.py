@@ -1,3 +1,4 @@
+import json
 import random
 
 from wot_td_datasets.td import MESSAGE_NUM, ThingDescription
@@ -7,11 +8,13 @@ def _mock(type=None, min=None, max=None, enum=None, name=None):
     msg = []
     for i in range(0, MESSAGE_NUM):
         msg.append(
-            {
-                "r": random.randint(0, 256),
-                "g": random.randint(0, 256),
-                "b": random.randint(0, 256),
-            }
+            json.dumps(
+                {
+                    "r": random.randint(0, 256),
+                    "g": random.randint(0, 256),
+                    "b": random.randint(0, 256),
+                }
+            )
         )
     return msg
 

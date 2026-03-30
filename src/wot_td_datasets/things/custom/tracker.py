@@ -1,3 +1,4 @@
+import json
 import random
 
 from wot_td_datasets.td import MESSAGE_NUM, ThingDescription
@@ -7,11 +8,13 @@ def _mock_location(type=None, min=None, max=None, enum=None, name=None):
     msg = []
     for i in range(0, MESSAGE_NUM):
         msg.append(
-            {
-                "longitude": round(random.uniform(0, 45), 3),
-                "latitude": round(random.uniform(0, 45), 3),
-                "altitude": round(random.uniform(0, 10), 3),
-            }
+            json.dumps(
+                {
+                    "longitude": round(random.uniform(0, 45), 3),
+                    "latitude": round(random.uniform(0, 45), 3),
+                    "altitude": round(random.uniform(0, 10), 3),
+                }
+            )
         )
     return msg
 
@@ -20,11 +23,13 @@ def _mock_set(type=None, min=None, max=None, enum=None, name=None):
     msg = []
     for i in range(0, MESSAGE_NUM):
         msg.append(
-            {
-                "longitude": round(random.uniform(0, 45), 3),
-                "latitude": round(random.uniform(0, 45), 3),
-                "radius": round(random.uniform(0, 50), 3),
-            }
+            json.dumps(
+                {
+                    "longitude": round(random.uniform(0, 45), 3),
+                    "latitude": round(random.uniform(0, 45), 3),
+                    "radius": round(random.uniform(0, 50), 3),
+                }
+            )
         )
     return msg
 

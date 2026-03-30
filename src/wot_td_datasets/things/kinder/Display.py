@@ -1,3 +1,5 @@
+import json
+
 from wot_td_datasets.td import ThingDescription
 
 
@@ -27,11 +29,11 @@ def td():
                             "contentType": "application/json;charset=utf-8",
                             "mqv:topic": "power",
                             "mock": lambda type, min, max, enum, name: [
-                                {"status": True},
-                                {"status": True},
-                                {"status": False},
-                                {"status": True},
-                                {"status": False},
+                                json.dumps({"status": True}),
+                                json.dumps({"status": True}),
+                                json.dumps({"status": False}),
+                                json.dumps({"status": True}),
+                                json.dumps({"status": False}),
                             ],
                         }
                     ],
@@ -123,24 +125,30 @@ def td():
                             "contentType": "application/json;charset=utf-8",
                             "mqv:topic": "playvideo",
                             "mock": lambda type, min, max, enum, name: [
-                                {
-                                    "identifier": "advert-1",
-                                    "name": "Advert for Product 1",
-                                    "description": "An advertisement for product 1",
-                                    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                                },
-                                {
-                                    "identifier": "store-tour",
-                                    "name": "Store Tour",
-                                    "description": "Tour around the store",
-                                    "url": "http://192.168.0.70:3000/videos/store.mp4",
-                                },
-                                {
-                                    "identifier": "sale",
-                                    "name": "Sales",
-                                    "description": "Video promoting the Black Friday sale",
-                                    "url": "http://192.168.0.70:3000/videos/bf_sale_2025.mp4",
-                                },
+                                json.dumps(
+                                    {
+                                        "identifier": "advert-1",
+                                        "name": "Advert for Product 1",
+                                        "description": "An advertisement for product 1",
+                                        "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                                    }
+                                ),
+                                json.dumps(
+                                    {
+                                        "identifier": "store-tour",
+                                        "name": "Store Tour",
+                                        "description": "Tour around the store",
+                                        "url": "http://192.168.0.70:3000/videos/store.mp4",
+                                    }
+                                ),
+                                json.dumps(
+                                    {
+                                        "identifier": "sale",
+                                        "name": "Sales",
+                                        "description": "Video promoting the Black Friday sale",
+                                        "url": "http://192.168.0.70:3000/videos/bf_sale_2025.mp4",
+                                    }
+                                ),
                             ],
                         }
                     ],
@@ -194,24 +202,30 @@ def td():
                             "contentType": "application/json;charset=utf-8",
                             "mqv:topic": "presentationwebapp",
                             "mock": lambda type, min, max, enum, name: [
-                                {
-                                    "identifier": "facebook",
-                                    "name": "Facebook Page",
-                                    "description": "The Facebook page of the store",
-                                    "url": "www.facebook.com",
-                                },
-                                {
-                                    "identifier": "yelp",
-                                    "name": "Yelp Page",
-                                    "description": "The Yelp Review Page",
-                                    "url": "www.yelp.com",
-                                },
-                                {
-                                    "identifier": "google",
-                                    "name": "Google Store Page",
-                                    "description": "The Google reviews page of the store",
-                                    "url": "www.google.com",
-                                },
+                                json.dumps(
+                                    {
+                                        "identifier": "facebook",
+                                        "name": "Facebook Page",
+                                        "description": "The Facebook page of the store",
+                                        "url": "www.facebook.com",
+                                    }
+                                ),
+                                json.dumps(
+                                    {
+                                        "identifier": "yelp",
+                                        "name": "Yelp Page",
+                                        "description": "The Yelp Review Page",
+                                        "url": "www.yelp.com",
+                                    }
+                                ),
+                                json.dumps(
+                                    {
+                                        "identifier": "google",
+                                        "name": "Google Store Page",
+                                        "description": "The Google reviews page of the store",
+                                        "url": "www.google.com",
+                                    }
+                                ),
                             ],
                         }
                     ],
@@ -257,13 +271,21 @@ def td():
                             "subprotocol": "longpoll",
                             "mqv:topic": "weatheralert",
                             "mock": lambda type, min, max, enum, name: [
-                                {"region": "TX, Houston", "alert": "Rainstorm"},
-                                {"region": "FL, Tampa", "alert": "Ice storm"},
-                                {
-                                    "region": "CA, San Jose",
-                                    "alert": "Heat wave",
-                                },
-                                {"region": "MI, Detroit", "alert": "Heavy winds"},
+                                json.dumps(
+                                    {"region": "TX, Houston", "alert": "Rainstorm"}
+                                ),
+                                json.dumps(
+                                    {"region": "FL, Tampa", "alert": "Ice storm"}
+                                ),
+                                json.dumps(
+                                    {
+                                        "region": "CA, San Jose",
+                                        "alert": "Heat wave",
+                                    }
+                                ),
+                                json.dumps(
+                                    {"region": "MI, Detroit", "alert": "Heavy winds"}
+                                ),
                             ],
                         },
                     ],

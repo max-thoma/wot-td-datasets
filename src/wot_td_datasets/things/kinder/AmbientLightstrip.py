@@ -1,17 +1,20 @@
+import json
 import random
 
-from wot_td_datasets.td import ThingDescription, MESSAGE_NUM
+from wot_td_datasets.td import MESSAGE_NUM, ThingDescription
 
 
 def _mock_state(type=None, min=None, max=None, enum=None, name=None):
     msg = []
     for i in range(0, MESSAGE_NUM):
         msg.append(
-            {
-                "on": bool(random.randint(0, 1)),
-                "bri": random.randint(0, 254),
-                "sat": random.randint(0, 254),
-            }
+            json.dumps(
+                {
+                    "on": bool(random.randint(0, 1)),
+                    "bri": random.randint(0, 254),
+                    "sat": random.randint(0, 254),
+                }
+            )
         )
     return msg
 

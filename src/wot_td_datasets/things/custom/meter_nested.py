@@ -1,3 +1,4 @@
+import json
 import random
 
 from wot_td_datasets.td import MESSAGE_NUM, ThingDescription
@@ -7,11 +8,13 @@ def _mock_current(type=None, min=None, max=None, enum=None, name=None):
     msg = []
     for i in range(0, MESSAGE_NUM):
         msg.append(
-            {
-                "L1": round(random.uniform(0, 16), 3),
-                "L2": round(random.uniform(0, 16), 3),
-                "L3": round(random.uniform(0, 16), 3),
-            }
+            json.dumps(
+                {
+                    "L1": round(random.uniform(0, 16), 3),
+                    "L2": round(random.uniform(0, 16), 3),
+                    "L3": round(random.uniform(0, 16), 3),
+                }
+            )
         )
     return msg
 
@@ -20,11 +23,13 @@ def _mock_power(type=None, min=None, max=None, enum=None, name=None):
     msg = []
     for i in range(0, MESSAGE_NUM):
         msg.append(
-            {
-                "Total": round(random.uniform(0, 3000), 3),
-                "Today": round(random.uniform(0, 300), 3),
-                "Now": round(random.uniform(0, 3), 3),
-            }
+            json.dumps(
+                {
+                    "Total": round(random.uniform(0, 3000), 3),
+                    "Today": round(random.uniform(0, 300), 3),
+                    "Now": round(random.uniform(0, 3), 3),
+                }
+            )
         )
     return msg
 
