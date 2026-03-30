@@ -11,7 +11,7 @@ from pydantic import (
 )
 from pydantic.json_schema import SkipJsonSchema
 
-MESSAGE_NUM = 5
+MESSAGE_NUM: int = 5
 
 DEFAULT_MQTT_BROKER = "mqtt://localhost:1883"
 
