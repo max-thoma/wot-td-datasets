@@ -10,18 +10,19 @@ from wot_td_datasets.message_log import (
 from wot_td_datasets.td import ThingDescription
 
 
-def log_message(topic, payload, retain, subscribed, file):
+def log_message(topic, payload, retain, subscribed, file, write_to_file):
     l = MessageLog(
         topic=topic, payload=str(payload), retain=retain, subscribed=subscribed
     )
-    file.write(f"{l}\n")
+    if write_to_file:
+        file.write(f"{l}\n")
     return l
 
 
 count = 0
 
 
-def mock_thing(td: ThingDescription):
+def mock_thing(td: ThingDescription, write_to_file=False):
     global count
 
     device_log_lst = []
@@ -29,7 +30,11 @@ def mock_thing(td: ThingDescription):
     if not os.path.exists("logs"):
         os.mkdir("logs")
 
-    message_log_file = open(f"logs/Message_log_{count}_{td.type}.txt", "w")
+    if write_to_file:
+        message_log_file = open(f"logs/Message_log_{count}_{td.type}.txt", "w")
+    else:
+        message_log_file = None
+
     count += 1
     props = td.properties
     events = td.events
@@ -49,6 +54,7 @@ def mock_thing(td: ThingDescription):
                         attr.forms[0].retain,
                         False,  # Device is not subscribed to its own property
                         message_log_file,
+                        write_to_file,
                     )
                 )
             device_log_lst.append(MessageLogList(logs=message_log_lst))
@@ -71,6 +77,7 @@ def mock_thing(td: ThingDescription):
                         attr.forms[0].retain,
                         False,  # Device is not subscribed to its own events
                         message_log_file,
+                        write_to_file,
                     )
                 )
             device_log_lst.append(MessageLogList(logs=message_log_lst))
@@ -93,11 +100,14 @@ def mock_thing(td: ThingDescription):
                         attr.forms[0].retain,
                         True,  # Device is subscribed to its own actions
                         message_log_file,
+                        write_to_file,
                     )
                 )
             device_log_lst.append(MessageLogList(logs=message_log_lst))
-    message_log_file.flush()
-    message_log_file.close()
+
+    if write_to_file:
+        message_log_file.flush()
+        message_log_file.close()
     return device_log_lst
 
 
@@ -144,10 +154,10 @@ def mock_thing_str(td: ThingDescription):
     return s
 
 
-def generate_message_logs() -> DeviceMessageLogList:
+def generate_message_logs(write_to_file=False) -> DeviceMessageLogList:
     message_log_lst = []
     for thing in _things_list:
-        device_message_logs = mock_thing(thing.td())
+        device_message_logs = mock_thing(thing.td(), write_to_file=write_to_file)
         message_log_lst.append(
             DeviceMessageLog(device=thing.td().title, logs=device_message_logs)
         )
@@ -159,7 +169,7 @@ def generate_device_message_log(thing) -> DeviceMessageLog:
 
 
 if __name__ == "__main__":
-    logs = generate_message_logs()
+    logs = generate_message_logs(write_to_file=True)
     print()
 
     print(logs)
