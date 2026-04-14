@@ -1,3 +1,4 @@
+import math
 import random
 import sys
 from enum import Enum
@@ -64,7 +65,7 @@ def default_mock(type=AttributeType.null, min=None, max=None, enum=None, name=No
             msg.append(round(random.uniform(min, max), 3))
         return msg
     elif type == "boolean":
-        return ["true", "false"] * int(MESSAGE_NUM / 2)
+        return ["true", "false"] * int(math.ceil(MESSAGE_NUM / 2))
 
     raise NotImplementedError(f"The default mock does not work for {name}: {type}")
 
