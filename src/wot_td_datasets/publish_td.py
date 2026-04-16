@@ -9,6 +9,8 @@ import requests
 
 from wot_td_datasets.generate import DataSets, td_datasets
 
+logger = logging.getLogger("publish_td.py")
+
 
 def put_to_tdd(
     tdd_hostname: str,
@@ -30,34 +32,45 @@ def put_to_tdd(
     Returns:
         None
     """
-    logger = logging.getLogger("publish_td.py")
-
     things_list = td_datasets(dataset_selection)
     for thing in things_list:
-        td = thing.td()
-
-        url = f"http://{tdd_hostname}:{tdd_port}/things/{td.id}"
-        payload = td.model_dump_json(
-            exclude_none=True,
-            by_alias=True,
-            indent=2,
-            exclude={"properties": {"*": "title"}},
-        )
-        headers = {"Content-Type": "application/json"}
-
-        response = requests.request(
-            "PUT", url, headers=headers, data=payload, timeout=15
-        )
-
-        if response.status_code not in [201, 204]:
-            logger.error(
-                "Something went wrong while publishing %s to the TDD located at %s, response: %s",
-                td.id,
-                url,
-                response,
-            )
+        put_thing_to_tdd(logger, tdd_hostname, tdd_port, thing)
         sleep(20.0 / 1000.0)
     logger.info("Published %s TDs to the TDD", len(things_list))
+
+
+def put_thing_to_tdd(tdd_hostname: str, tdd_port: int, thing):
+    """
+    Puts the Thing to the TDD
+    Args:
+        tdd_hostname (str): The hostname or IP address of the target TDD server.
+        tdd_port (int): The port number used to connect to the TDD server.
+        thing: A Thing that has implemented the td() method
+
+    Returns:
+        None
+    """
+
+    td = thing.td()
+
+    url = f"http://{tdd_hostname}:{tdd_port}/things/{td.id}"
+    payload = td.model_dump_json(
+        exclude_none=True,
+        by_alias=True,
+        indent=2,
+        exclude={"properties": {"*": "title"}},
+    )
+    headers = {"Content-Type": "application/json"}
+
+    response = requests.request("PUT", url, headers=headers, data=payload, timeout=15)
+
+    if response.status_code not in [201, 204]:
+        logger.error(
+            "Something went wrong while publishing %s to the TDD located at %s, response: %s",
+            td.id,
+            url,
+            response,
+        )
 
 
 if __name__ == "__main__":

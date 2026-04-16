@@ -1,6 +1,6 @@
 import os
 
-from wot_td_datasets.generate import _things_list
+from wot_td_datasets.generate import DataSets, td_datasets
 from wot_td_datasets.message_log import (
     DeviceMessageLog,
     DeviceMessageLogList,
@@ -154,9 +154,14 @@ def mock_thing_str(td: ThingDescription):
     return s
 
 
-def generate_message_logs(write_to_file=False) -> DeviceMessageLogList:
+def generate_message_logs(
+    dataset_selection: DataSets = DataSets.CUSTOM
+    | DataSets.KINDER
+    | DataSets.WEB_THINGS,
+    write_to_file=False,
+) -> DeviceMessageLogList:
     message_log_lst = []
-    for thing in _things_list:
+    for thing in td_datasets(dataset_selection):
         device_message_logs = mock_thing(thing.td(), write_to_file=write_to_file)
         message_log_lst.append(
             DeviceMessageLog(device=thing.td().title, logs=device_message_logs)

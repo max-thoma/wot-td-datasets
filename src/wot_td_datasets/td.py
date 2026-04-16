@@ -1,11 +1,10 @@
 import math
 import random
-import sys
 from enum import Enum
 from random import sample
 from typing import Any, Callable, Dict, List, Optional
 
-from pydantic import BaseModel, Field, RootModel, field_serializer
+from pydantic import BaseModel, Field, field_serializer
 from pydantic.json_schema import SkipJsonSchema
 
 MESSAGE_NUM: int = 5

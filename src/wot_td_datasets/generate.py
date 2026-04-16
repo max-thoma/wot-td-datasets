@@ -1,7 +1,6 @@
 import os
 from enum import IntFlag
 
-from wot_td_datasets.td import ThingDescription
 from wot_td_datasets.things.custom import (
     allarm_control_panel,
     binary_window_contact,
@@ -195,9 +194,13 @@ def td_datasets(
     return ds
 
 
-def generate_tds():
+def generate_tds(
+    dataset_selection: DataSets = DataSets.CUSTOM
+    | DataSets.KINDER
+    | DataSets.WEB_THINGS,
+):
     count = 0
-    for thing in _things_list:
+    for thing in td_datasets(dataset_selection):
         td = thing.td()
 
         if not os.path.exists("tds"):

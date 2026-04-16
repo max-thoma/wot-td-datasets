@@ -61,7 +61,6 @@ async def emulate_client(thing, sleep) -> None:
 
 
 async def run_tasks(things, sleep):
-
     tasks = []
     for thing in things:
         tasks.append(asyncio.ensure_future(emulate_client(thing, sleep)))
@@ -72,13 +71,25 @@ async def run_tasks(things, sleep):
         logger.info("Task cancled sucessfully")
 
 
-def main(sleep: int = 10):
+def emulate_dataset(
+    dataset_selection: DataSets = DataSets.CUSTOM
+    | DataSets.KINDER
+    | DataSets.WEB_THINGS,
+    sleep: int = 10,
+):
     formatter = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     logging.basicConfig(level=logging.INFO, format=formatter)
 
-    asyncio.run(run_tasks(td_datasets(DataSets.CUSTOM), sleep))
+    asyncio.run(run_tasks(td_datasets(dataset_selection), sleep))
+
+
+def emulate_thing(thing, sleep: int = 10):
+    formatter = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    logging.basicConfig(level=logging.INFO, format=formatter)
+
+    asyncio.run(run_tasks([thing], sleep))
 
 
 if __name__ == "__main__":
     wot_td_datasets.td.MESSAGE_NUM = 1
-    main(sleep=10)
+    emulate_dataset(sleep=10)
