@@ -108,6 +108,9 @@ class BaseProperty(BaseModel):
     )
     observable: Optional[bool] = None
     type: AttributeType = AttributeType.null
+    at_type: Optional[str] = Field(
+        default=None, description="The @type of the property", alias="@type"
+    )
     minimum: Optional[int] = None
     maximum: Optional[int] = None
     enum: Optional[List[str]] | Optional[List[int]] | Optional[List[float]] = Field(
